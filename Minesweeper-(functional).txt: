@@ -1,0 +1,7 @@
+Minesweeper is a functional program which produces a solution for any solvable minesweeper board. Minesweeper is a game where the user must predict which 
+squares are mines and which squares are safe, based on a warning number (how many mines are neighboring that square) located on each uncovered square. More 
+information on this game can be found at the following link: https://en.wikipedia.org/wiki/Minesweeper_(video_game). The algorithm loops though each of the 
+revealed edge squares and references their neighbors until it is able to make a conclusive decision about whether or not any given square is a mine or is 
+safe. 
+
+For implementation specifics, see: https://github.com/connormaas/Minesweeper_Private
