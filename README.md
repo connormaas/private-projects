@@ -10,3 +10,6 @@ The following is a list of the private repositories whose descriptions (.txt) ar
 - c0vm: https://github.com/connormaas/c0vm_Private
 - Exp (language): https://github.com/connormaas/Exp_Private
 - Lights Out Solver: https://github.com/connormaas/Lightsout_Private
+
+Note: these links will not work unless access has been granted. To request access, reach out to connor@maasclinic.com.
+
