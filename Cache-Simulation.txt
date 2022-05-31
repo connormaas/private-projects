@@ -6,4 +6,3 @@ load and save data with specific addresses (to read and write), as well as ask t
 Evictions, Dirty Bytes, and Dirty Byte Evictions. 
 
 For implementation specifics, see: https://github.com/connormaas/Cache_Private
-
