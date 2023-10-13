@@ -4,4 +4,4 @@ information on this game can be found at the following link: https://en.wikipedi
 revealed edge squares and references their neighbors until it is able to make a conclusive decision about whether or not any given square is a mine or is 
 safe. 
 
-For implementation specifics, see: https://github.com/connormaas/minesweeper
+For implementation specifics, see: https://github.com/connormaas/minesweeper-fast
