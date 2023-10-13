@@ -149,17 +149,11 @@ However, the parallelization of our calls to sort allow our recurrence to become
 
 T(n) = T(n/2) + O(n)
 
-We first consider the root dominated case. For this case if the root has cost $C(r)$, level $i$ (the root is level 0) will have total cost at most $(\frac{1}{\alpha})^i C(r)$. This is because the cost of the children of every node on a level decrease by at least a factor of $\alpha$ to the next level. The total cost is therefore upper bounded by
+We can conclude that this recurrence is *root dominated*. That is, if the root has cost $C(r)$, level $i$ will have total cost at most $(\frac{1}{2})^i C(r)$. This is because the cost of the children of every node on a level decrease by at least a factor of 2 to the next level. The total cost is therefore upper bounded by
 $$
-\sum_{i=0}^{\infty} \left(\frac{1}{\alpha}\right)^i C(r)
+\sum_{i=0}^{\infty} \left(\frac{1}{2}\right)^i C(r)
 $$
-This is a decaying geometric sequence and therefore is upper bounded by $(\alpha-1)/C(r)$, as claimed.
-
-
-
-
-This is a decaying geometric sequence and therefore is upper bounded by 𝛼𝛼−1𝐶(𝑟)
-We can conclude that this recurrence is *root dominated*. That is, For all nodes 𝑣 such that 𝑁(𝑣) > 𝑎, 𝐶(𝑣) ≥ 𝛼 ∑ 𝑢 ∈ 𝐷(𝑣) 𝐶(𝑢)l Or in other words, the cost of the parent is at least a constant factor greater than the sum of the costs of the children. In this case, the total cost is dominated by the root, and is upper bounded by 𝛼 − 1 times the cost of the root.
+This is a decaying geometric sequence and therefore is upper bounded by $\fraw{1}/{2 - 1} C(r)$ = C(r).
 
 
 ## [AI Checkers](https://github.com/connormaas/ai-checkers)
