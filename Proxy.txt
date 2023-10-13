@@ -21,4 +21,4 @@ races and other data sharing issues. ** Particularly, see the information on inc
 details.
 - The proxy makes use of a robust I/O package defined in csapp.h for reading and writing data
 
-For implementation specifics, see: https://github.com/connormaas/Proxy_Private
+For implementation specifics, see: https://github.com/connormaas/proxy-2022
