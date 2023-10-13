@@ -5,4 +5,4 @@ instructions. The call stack consists of frames, each one containing local varia
 an operand stack and their result is pushed back onto the stack. Functions defined in a source file are kept in a “function pool” and library functions are 
 kept in a “native pool”.
 
-For implementation specifics, see: https://github.com/connormaas/c0vm_Private
+For implementation specifics, see: https://github.com/connormaas/c0vm
