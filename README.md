@@ -16,7 +16,7 @@ Note: these links will not work unless access has been granted. To request acces
 
 ## [Proxy](https://github.com/connormaas/proxy-2022)
 
-### Introduction
+#### Introduction
 A web proxy serves as a "middle-man" between a client and server. To the client, it acts as a server, interpreting requests and returning responses. Conversely, to the server, it acts as a client, generating requests and reading back server responses.
 
 ### High-Level Overview
