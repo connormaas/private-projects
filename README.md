@@ -2,7 +2,7 @@
 
 ## Overview
 
-The following is a comprehensive collection of my non-public projects. Detailed descriptions of each project are included in the sections below. For quick access to private project repositories, I have provided the links:
+This file consists of comprehensive descriptions for my non-public projects, accompanied by the links to said projects. For quick access to the private project repositories, I have provided the links below:
 
 - Cache Simulation: https://github.com/connormaas/cache-sim
 - Malloc: https://github.com/connormaas/malloc
@@ -14,7 +14,7 @@ The following is a comprehensive collection of my non-public projects. Detailed 
 - Exp (language): https://github.com/connormaas/exp-language
 - Lights Out Solver: https://github.com/connormaas/lightsout
 
-However, please note these links will lead to 404 error unless I have granted you access. To request access, reach out to me at connor@maasclinic.com.
+However, please note that these links will lead to 404 error unless I have granted you access to them. Please each out to me at connor@maasclinic.com and I would be happy to provide access.
 
 ## [Proxy](https://github.com/connormaas/proxy-2022)
 
