@@ -19,13 +19,13 @@ However, please note that these links will lead to 404 error unless I have grant
 ## [Proxy](https://github.com/connormaas/proxy-2022)
 
 #### Introduction
-A web proxy serves as a "middle-man" between a client and server. To the client, it acts as a server, interpreting requests and returning responses. Conversely, to the server, it acts as a client, generating requests and reading responses from the server.
+A web proxy serves as a "middle-man" between a client and server. To the client, it acts as a server, interpreting requests and providing responses. While to the server, it acts as a client, generating requests and reading responses.
 
 #### High-Level Overview
 1. Open a socket which listens for a client.
 2. Use threads for each new client.
-3. Read request from client.
-4. Search the cache (a library functioning as a cache and shared between all threads). If present, write this response to the client and skip steps 5-7.
+3. Read requests from client.
+4. Search the cache (shared response cachen between all threads). If present, write this response to the client and skip steps 5-7.
 5. Write the client's request to the server.
 6. Read the server's response and cache it.
 7. Write the response back to the client.
@@ -33,8 +33,6 @@ A web proxy serves as a "middle-man" between a client and server. To the client,
 #### Details
 - Capable of reading and writing both binary and text data.
 - Handles requests concurrently from different clients.
-- Only handles HTTP requests.
-- Accepts HTTP/1.0 and HTTP/1.1, but forwards all requests as HTTP/1.0.
 - Employs proper error checking and will not exit the program when errors arise.
 - Uses a cache (shared with all threads) which stores server responses using client requests as "keys". The proxy uses mutexes to prevent data races and other data sharing issues. **Particularly, see the information on incrementing and decrementing reference count.** See `cache.h` for more details.
 - Utilizes a robust I/O package defined in `csapp.h` for reading and writing data.
