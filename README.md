@@ -19,7 +19,7 @@ However, please note that these links will lead to 404 error unless I have grant
 ## [Proxy](https://github.com/connormaas/proxy-2022)
 
 #### Introduction
-A web proxy serves as a "middle-man" between a client and server. To the client, it acts as a server, interpreting requests and returning responses. Conversely, to the server, it acts as a client, generating requests and reading back server responses.
+A web proxy serves as a "middle-man" between a client and server. To the client, it acts as a server, interpreting requests and returning responses. Conversely, to the server, it acts as a client, generating requests and reading responses from the server.
 
 #### High-Level Overview
 1. Open a socket which listens for a client.
