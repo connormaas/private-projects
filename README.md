@@ -34,8 +34,7 @@ A web proxy serves as a "middle-man" between a client and server. To the client,
 - Capable of reading and writing both binary and text data.
 - Handles requests concurrently from different clients.
 - Employs proper error checking and will not exit the program when errors arise.
-- Uses a cache (shared with all threads) which stores server responses using client requests as "keys". The proxy uses mutexes to prevent data races and other data sharing issues. **Particularly, see the information on incrementing and decrementing reference count.** See `cache.h` for more details.
-- Utilizes a robust I/O package defined in `csapp.h` for reading and writing data.
+- Uses a cache (shared with all threads) which stores server responses using client requests as "keys". The proxy uses mutexes to prevent data races and other data sharing issues.
 
 ## [Malloc](https://github.com/connormaas/malloc)
 
