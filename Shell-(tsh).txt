@@ -39,4 +39,4 @@ Error handling:
 - Error handling has been carefully constructed to make that invalid or extraneous inputs will not be able to break the shell.
 - Please see the function descriptions in this file for more details on error handling specifics.
 
-For implementation specifics, see: https://github.com/connormaas/Shell_Private
+For implementation specifics, see: https://github.com/connormaas/tsh-shell
