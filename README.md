@@ -6,7 +6,6 @@ The following is a list of the private repositories whose descriptions (.txt) ar
 - Shell (tsh): https://github.com/connormaas/tsh-shell
 - Mergesort CPS (functional): https://github.com/connormaas/mergesort-cps
 - Checkers AI (functional): https://github.com/connormaas/ai-checkers
-- Minesweeper (functional): https://github.com/connormaas/minesweeper
 - c0vm: https://github.com/connormaas/c0vm
 - Exp (language): https://github.com/connormaas/exp-language
 - Lights Out Solver: https://github.com/connormaas/lightsout
