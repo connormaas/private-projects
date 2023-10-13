@@ -1,4 +1,4 @@
-# Private_Repos
+# Private Projects
 The following is a list of the private repositories whose descriptions are included in this repository:
 - Cache Simulation: https://github.com/connormaas/cache-sim
 - Malloc: https://github.com/connormaas/malloc
