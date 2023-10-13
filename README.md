@@ -153,7 +153,7 @@ We can conclude that this recurrence is *root dominated*. That is, if the root h
 $$
 \sum_{i=0}^{\infty} \left(\frac{1}{2}\right)^i C(r)
 $$
-This is a decaying geometric sequence and therefore is upper bounded by $\fraw{1}/{2 - 1} C(r)$ = C(r).
+This is a decaying geometric sequence and therefore is upper bounded by $\frac{1}/{2 - 1} C(r)$ = C(r).
 
 
 ## [AI Checkers](https://github.com/connormaas/ai-checkers)
