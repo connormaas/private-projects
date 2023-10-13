@@ -1,5 +1,5 @@
-This program is a functional AI which is able to effectively play checkers, using the Alpha-beta 
-algorithm (Alpha-beta pruning). More information on this algorithm can be found at the following link: 
+This program is a functional AI which is able to effectively play checkers, using the alpha-beta 
+algorithm (alpha-beta pruning). More information on this algorithm can be found at the following link: 
 https://www.chessprogramming.org/Alpha-Beta. This algorithm considers future moves by the opponent for 
 each possible move that it could make on that turn. Although this algorithm is relatively simple, it 
 becomes more difficult when implementing it functionally.
