@@ -1,6 +1,5 @@
 # Private Projects
-The following is a list of the private projects whose detailed descriptions are included in various 
-files thoughout this repository:
+The following is a list of the private projects whose detailed descriptions are included in various files thoughout this repository:
 - Cache Simulation: https://github.com/connormaas/cache-sim
 - Malloc: https://github.com/connormaas/malloc
 - Proxy: https://github.com/connormaas/proxy-2022
@@ -11,6 +10,5 @@ files thoughout this repository:
 - Exp (language): https://github.com/connormaas/exp-language
 - Lights Out Solver: https://github.com/connormaas/lightsout
 
-Note: these links will not work unless access has been granted. To request access, reach out to 
-connor@maasclinic.com.
+Note: these links will not work unless access has been granted. To request access, reach out to connor@maasclinic.com.
 
