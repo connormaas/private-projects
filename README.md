@@ -1,5 +1,5 @@
 # Private_Repos
-The following is a list of the private repositories whose descriptions (.txt) are included in this repository:
+The following is a list of the private repositories whose descriptions are included in this repository:
 - Cache Simulation: https://github.com/connormaas/cache-sim
 - Malloc: https://github.com/connormaas/malloc
 - Proxy: https://github.com/connormaas/proxy-2022
