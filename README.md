@@ -39,37 +39,37 @@ A web proxy serves as a "middle-man" between a client and server. To the client,
 ## [Malloc](https://github.com/connormaas/malloc)
 
 #### Overview
-This is an implementation of the C memory allocation functions: `malloc`, `calloc`, `realloc`, and `free`, designed to have the same behavior as the C Standard Library functions.
+This is an implementation of the C memory allocation functions: `malloc`, `calloc`, `realloc`, and `free`, designed to have the same behavior and performance as the corresponding C Standard Library functions.
 
 #### Implementation
-- The heap is implemented with blocks that contain headers and payloads. The payloads are zero-length arrays, where the last 8 bytes are used to represent the footer (only in freed blocks). Headers and footers of each block are identical in free blocks and contain both the size of the payload, as well as information on the allocation status of previous blocks.
-- Throughput is optimized by implementing segregated free lists, which categorize blocks of similar size for quicker access.
+- The heap is implemented with blocks that contain headers and payloads. The payloads are zero-length arrays, where the last 8 bytes are used to represent the footer (only in freed blocks). Headers and footers of each block are identical and contain both the size of the payload, as well as information on the allocation status of previous blocks.
+- Mini-blocks: mini-blocks are used for small allocations where bytes would be wasted in the payload. They are only 16 bytes (as opposed to regular free blocks which are a minimum of 32 bytes). The first 8 bytes are for the header and the additional 8 bytes are for the payload. When mini-blocks are free, the payload is used as a "next" pointer, allowing for the creation of a singly linked list between all mini-blocks.
+- Performance is optimized by implementing segregated free lists, which aggregate blocks of similar size for quicker access.
 - Utilization is optimized through several strategies:
   1. During allocation, the free blocks being allocated are split into smaller blocks.
-  2. During freeing, blocks are attempted to be coalesced with their neighbors into a larger single block if either or both of their neighbors are free.
+  2. During freeing, blocks are coalesced with their neighbors into a larger blocks if either or both of their neighbors are free.
   3. Allocated blocks do not contain or require footers (the bytes of the footer are used as additional payload bytes).
   4. There is a separately linked list containing free mini-blocks, which significantly reduces wasted bytes in small allocations.
-  5. The use of a better-fit search algorithm for allocating free blocks slightly improves the utilization (see the `better_fit_search` function spec for more details).
-- Mini-blocks: mini-blocks are used for small allocations where bytes would be wasted in the payload. Mini blocks are only 16 bytes (as opposed to regular free blocks which are a minimum of 32 bytes). Mini blocks use the first 8 bytes for the header and the additional 8 bytes of payload space for allocation or (when free) for a next pointer, allowing for the creation of a singly linked list.
+  5. The use of a [best-fit](https://www.geeksforgeeks.org/best-fit-allocation-in-operating-system) policy for allocating free blocks slightly improves the utilization.
 
 ## [Shell](https://github.com/connormaas/tsh-shell)
 
 #### Overview
-A fully functional command-line shell that constantly interprets the user's inputs, running both built-in and user-driven commands (depending on the user's requests). This shell supports several built-in commands, process execution, and IO redirection.
+A Unix command-line shell that interprets user inputs, capable of executing concurrent built-in and user-driven commands. This shell supports error handling, signal handling, and IO redirection.
 
 #### Creating Processes
 - A user may simply enter an executable that they wish to run, and if the file is reachable, the process will immediately begin taking place.
-- If the '&' operator is added to the end of the line with a space in between, the process will run in the background and the user may still work with the shell, as well as run more executables.
-- If the '&' operator is not added, the process will run in the foreground. This can be terminated or stopped using ctrl-c or ctrl-z respectively (mentioned in the next section).
+- If the '&' operator is added to the end of the line, the process will run in the background and the user may continuing employing the shell as normal.
+- If the '&' operator is not added, the process will run in the foreground. This can be terminated or paused using ctrl-c or ctrl-z respectively.
 
 #### Details
 - Each job being executed has a process ID (PID) and a job ID (JID), which is unique to that process. This is used for identification and further manipulation of processes.
 - Each child process is given its own process group, so when signals are forwarded to that process group, it will not interfere with the parent process. Specifically, this is necessary because otherwise these signals would be sent back to the original shell (parent), as well as every process created by it.
-- When a background process begins, its JID and PID as well as the command line which invoked the execution are nicely displayed.
+- When a background process begins, its JID and PID as well as the command line which invoked the execution are displayed.
 - The user typing 'ctrl-c' will terminate the execution of the foreground group.
 - The user typing 'ctrl-z' will stop the execution of the foreground group.
-- Children are properly reaped using a signal handler. The signal handler is able to deal with multiple terminated children despite receiving just one signal.
-- During a foreground process, background processes that terminate do not become zombies, as signals are constantly handled concurrently with process execution.
+- Children are properly [reaped](http://www.microhowto.info/howto/reap_zombie_processes_using_a_sigchld_handler.html) using a signal handler. The signal handler is able to deal with multiple terminated children despite receiving just one signal.
+- During a foreground process, background processes that terminate do not become [zombies](http://www.microhowto.info/howto/reap_zombie_processes_using_a_sigchld_handler.html), as signals are handled concurrently with process execution.
 
 #### Built-in Commands
 - `quit`: terminates the shell.
@@ -79,27 +79,85 @@ A fully functional command-line shell that constantly interprets the user's inpu
 
 #### IO Redirection
 - The operators '<' (input) and '>' (output) proceed the name of the file to which the input or output will be redirected.
-- The default input and output are standard input and output respectively.
+- The default input and output are stdout and stdin respectively.
 - Users may redirect output to any valid file which they have permission to write to.
-- If a request is made to write to a file that doesn't exist, a new file will be created with the same name and that file will be written to instead.
+- If a request is made to write to a file that doesn't exist, a new file will be created and written to.
 - Output can also be redirected from built-in commands, such as the `jobs` command, which lists the background jobs as described in the previous section.
-- Users may redirect input to any valid file which they have permission to read from. The file itself must exist or the process will be terminated.
+- Users may redirect input from any valid file which they have permission to read from. The file itself must exist or the process will be terminated.
 
 #### Error Handling
-- Error handling has been carefully constructed to ensure that invalid or extraneous inputs will not be able to break the shell.
-- Please see the function descriptions in this file for more details on error handling specifics.
+- Error handling has been carefully constructed to ensure no input can break the shell.
 
 ## [Cache Simulation](https://github.com/connormaas/cache-sim)
 
-#### Background
-[Cache Computing](https://en.wikipedia.org/wiki/Cache_(computing))
+#### Overview
 
-This program simulates a cache by first parsing the command line for specific arguments, including `s` (the number of bits for the set index), `b` (the number of bits for the block offset), `E` (the number of lines per set), `h` (help), and `v` (an optional debugging tool). It then parses a trace file, which contains load and save data with specific addresses (to read and write), as well as ask the number of bytes. The program prints the number of Hits, Misses, Evictions, Dirty Bytes, and Dirty Byte Evictions.
+This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computing)). It integrates a least recently used ([lru](https://www.educative.io/implement-least-recently-used-cache#)) eviction policy. An L1 cache is generally structured as follows:
+
+v = valid bit
+d = dirty bit
++----------------------------------------------------------------------------------+
+|                                   Cache Set 0                                    |
+| +----------------------------+               +----------------------------+      |
+| |            Line 0          |               |            Line 1          | ...  |
+| | v | d | tag |    offset    |               | v | d | tag |    offset    |      |
+| +----------------------------+               +----------------------------+      |
++----------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+|                                   Cache Set 1                                    |
+| +----------------------------+               +----------------------------+      |
+| |            Line 0          |               |            Line 1          | ...  |
+| | v | d | tag |    offset    |               | v | d | tag |    offset    |      |
+| +----------------------------+               +----------------------------+      |
++----------------------------------------------------------------------------------+
+                                        .
+                                        .
+                                        .
++----------------------------------------------------------------------------------+
+|                                   Cache Set _                                    |
+| +----------------------------+               +----------------------------+      |
+| |            Line 0          |               |            Line 1          | ...  |
+| | v | d | tag |    offset    |               | v | d | tag |    offset    |      |
+| +----------------------------+               +----------------------------+      |
++----------------------------------------------------------------------------------+
+
+
+#### Details
+
+The program begins by parsing the command line for specific arguments, including `s` (the number of bits required to represent the set index), `b` (the number of bits required to represent the block offset), and `E` (the number of lines per set). It then parses the specified trace file, which contains load and save operations with specific addresses. Additionally, the number of bytes required for each operation is included in said file. The program returns the number of: 
+- Hits: The number of times the cache successfully finds and retrieves the requested data.
+- Misses: The number of times the cache fails to find the requested data, necessitating a fetch from a higher-level memory.
+- Evictions: The process of removing a cache line from the cache to make space for new data, typically when the cache is full.
+- Dirty Bytes: Bytes in the cache that have been modified but not yet written back to the main memory or next level of cache.
+- Dirty Byte Evictions: The process of evicting cache lines that contain dirty bytes, which requires writing them back to the main memory before eviction.
 
 ## [Mergesort (CPS)](https://github.com/connormaas/mergesort-cps)
 
 #### Overview
-This is a version of merge sort written in continuation-passing style using the language SMLNJ.
+This is a parallel implementation of mergesort written in [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) utilizing the functional programming langauge, SML. The sequential complexity of this solution is the standard O(nlogn) for meregesort. However, the parallel complexity is O(n). We come to this conclusion using the [brick method]():
+
+In normal merge sort, we have:
+Split : O(n)
+Merge: O(n)
+Other operations: O(1)
+
+Therefore, our recurrence is:
+
+T(n) = 2T(n/2) + O(n)
+
+However, the parallelization of our calls to sort allow our recurrence to become:
+
+T(n) = T(n/2) + O(n)
+
+We first consider the root dominated case. For this case if the root has cost \(C(r)\), level \(i\) (the root is level 0) will have total cost at most \((1/\alpha)^i C(r)\). This is because the cost of the children of every node on a level decrease by at least a factor of \(\alpha\) to the next level. The total cost is therefore upper bounded by
+\[
+\sum_{i=0}^{\infty} \left(\frac{1}{\alpha}\right)^i C(r)
+\]
+This is a decaying geometric sequence and therefore is upper bounded by \((\alpha-1)/C(r)\), as claimed.
+
+This is a decaying geometric sequence and therefore is upper bounded by 𝛼𝛼−1𝐶(𝑟)
+We can conclude that this recurrence is *root dominated*. That is, For all nodes 𝑣 such that 𝑁(𝑣) > 𝑎, 𝐶(𝑣) ≥ 𝛼 ∑ 𝑢 ∈ 𝐷(𝑣) 𝐶(𝑢)l Or in other words, the cost of the parent is at least a constant factor greater than the sum of the costs of the children. In this case, the total cost is dominated by the root, and is upper bounded by 𝛼 − 1 times the cost of the root.
+
 
 ## [AI Checkers](https://github.com/connormaas/ai-checkers)
 
