@@ -98,6 +98,7 @@ This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computi
 ```
 v = valid bit
 d = dirty bit
+
 +----------------------------------------------------------------------------------+
 
 |                                   Cache Set 0                                    |
