@@ -151,7 +151,7 @@ This is a parallel implementation of mergesort written in [continuation-passing 
 In normal merge sort, we have:
 Split : $O(n)$
 Merge: $O(n)$
-Other operations: O(1)
+Other operations: $O(1)$
 
 Therefore, our recurrence is:
 
