@@ -133,7 +133,7 @@ d = dirty bit
 ```
 
 #### Details
-The program begins by parsing the command line for specific arguments, including `s` (the number of bits required to represent the set index), `b` (the number of bits required to represent the block offset), and `E` (the number of lines per set). It then parses a specified trace file, which contains load and save operations as well as corresponding memory addresses. The number of bytes required for each operation is also included in said trace file. Assuming th trace file is wwell-formatted, the program returns the number of: 
+The program begins by parsing the command line for specific arguments, including `s` (the number of bits required to represent the set index), `b` (the number of bits required to represent the block offset), and `E` (the number of lines per set). It then parses a specified trace file, which contains load and save operations as well as corresponding memory addresses. The number of bytes required for each operation is also included in said trace file. Assuming th trace file is well-formatted, the program returns the number of: 
 - `Hits`: The number of times the cache successfully finds and retrieves the requested data.
 - `Misses`: The number of times the cache fails to find the requested data, necessitating a fetch from a higher-level memory.
 - `Evictions`: The process of removing a cache line from the cache to make space for new data, typically when the cache is full.
