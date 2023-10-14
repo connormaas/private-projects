@@ -169,7 +169,6 @@ This is a decaying geometric sequence, so our upper bounded becomes $\frac{1}{2 
 
 ## [LightsOut Solver](https://github.com/connormaas/lightsout-fast)
 
-#### Overview
 [Lightsout](https://en.wikipedia.org/wiki/Lights_Out_(game)) is an electronic board game, consisting of a 5x5 board where the main goal is to "turn off all the lights." However, when a light is flipped, the neighboring lights (left, right, up, down) are also flipped. This program, written in C, produces a solution to any solvable board using the minimum number of moves. The program outputs a step-by-step solution to any solvable board . Additionally, I implemented a hash table library to stores previous board solutions, preventing any repetitive computation.
 
 ## [c0vm](https://github.com/connormaas/c0vm)
@@ -177,7 +176,7 @@ This is a decaying geometric sequence, so our upper bounded becomes $\frac{1}{2 
 #### Overview
 The C0 Virtual Machine (C0VM) is a stack-based virtual machine designed to execute [C0](https://c0.cs.cmu.edu/docs/c0-reference.pdf) bytecode. It draws inspiration from the Java Virtual Machine ([JVM](https://www.geeksforgeeks.org/jvm-works-jvm-architecture)).
 
-## Key Features:
+#### Key Features:
 - Bytecode Execution: C0VM reads and executes compiled C0 code represented in a bytecode format. It processes one instruction at a time and executes it based on the operational semantics defined for each instruction.
 - Value Representation: Primitive types are represented as 32-bit signed integers, while reference types are represented as void pointers. These are encapsulated under a special type called `c0_value`, which can hold either a primitive or a reference type.
 - Runtime Data Management: The runtime environment manages an operand stack, bytecode, a program counter, local variables, and a call stack to ensure the correct execution flow of the program. 
