@@ -91,7 +91,7 @@ A Unix command-line shell that interprets user inputs, capable of executing conc
 ## [Cache Simulation](https://github.com/connormaas/cache-sim)
 
 #### Overview
-This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computing)), which integrates the least recently used ([LRU](https://www.educative.io/implement-least-recently-used-cache#)) eviction policy and [write-back](https://www.geeksforgeeks.org/write-through-and-write-back-in-cache) data synchronizaton policy.
+This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computing)), which integrates [write-back](https://www.geeksforgeeks.org/write-through-and-write-back-in-cache) data synchronizaton and least recently used ([LRU](https://www.educative.io/implement-least-recently-used-cache#)) eviction policies.
 
 #### Illustration
 
