@@ -95,7 +95,7 @@ A Unix command-line shell that interprets user inputs, capable of executing conc
 This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computing)). It integrates a least recently used ([lru](https://www.educative.io/implement-least-recently-used-cache#)) eviction policy. An L1 cache is generally structured as follows:
 
 
-$v = valid bit
+v = valid bit
 d = dirty bit
 +----------------------------------------------------------------------------------+
 |                                   Cache Set 0                                    |
@@ -120,7 +120,9 @@ d = dirty bit
 | |            Line 0          |               |            Line 1          | ...  |
 | | v | d | tag |    offset    |               | v | d | tag |    offset    |      |
 | +----------------------------+               +----------------------------+      |
-+----------------------------------------------------------------------------------+$
++----------------------------------------------------------------------------------+
+
+
 #### Details
 
 The program begins by parsing the command line for specific arguments, including `s` (the number of bits required to represent the set index), `b` (the number of bits required to represent the block offset), and `E` (the number of lines per set). It then parses the specified trace file, which contains load and save operations with specific addresses. Additionally, the number of bytes required for each operation is included in said file. The program returns the number of: 
