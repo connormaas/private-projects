@@ -148,13 +148,10 @@ This program hosts a AI checkers player effective at winning games versus real, 
 #### Overview
 This is a parallel implementation of mergesort written in [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) utilizing the functional programming langauge, SML. The sequential complexity of this solution is the same as standard mergesort: O(nlogn). However, the parallel complexity is $O(n)$.
 
-In normal merge sort, we have:
-
-`split` : $O(n)$
-
-`merge`: $O(n)$
-
-Other operations: $O(1)$
+In normal merge sort, we have: 
+- `split` : $O(n)$
+- `merge`: $O(n)$
+- Other operations: $O(1)$
 
 Therefore, our recurrence is:
 
