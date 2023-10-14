@@ -150,7 +150,7 @@ T(n) = T(n/2) + O(n)
 
 We can conclude that this recurrence is *root dominated*. That is, if the root has cost $C(r)$, level $i$ will have total cost at most $(\frac{1}{2})^i C(r)$. This is because the cost of the children of every node on a level decrease by at least a factor of 2 to the next level. The total cost is therefore upper bounded by 
 
-$\sum_{i=0}(\infinity) \left(\frac{1}{2}\right)^i C(r)$
+$\sum_{i=0}{\infty} \left(\frac{1}{2}\right)^i C(r)$
 
 This is a decaying geometric sequence and therefore is upper bounded by $\frac{1}{2 - 1} C(r)$ = C(r).
 
