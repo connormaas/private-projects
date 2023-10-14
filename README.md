@@ -143,7 +143,7 @@ The program begins by parsing the command line for specific arguments, including
 ## [Mergesort (CPS)](https://github.com/connormaas/mergesort-cps)
 
 #### Overview
-This is a parallel implementation of mergesort written in [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) utilizing the functional programming langauge, SML. The sequential complexity of this solution is the standard O(nlogn) for meregesort. However, the parallel complexity is O(n). We come to this conclusion using the [brick method]():
+This is a parallel implementation of mergesort written in [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) utilizing the functional programming langauge, SML. The sequential complexity of this solution is the standard O(nlogn) for mergesort. However, the parallel complexity is O(n). We come to this conclusion using the [brick method]():
 
 In normal merge sort, we have:
 Split : O(n)
