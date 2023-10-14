@@ -153,11 +153,11 @@ In normal merge sort, we have:
 - `merge`: $O(n)$
 - Other operations: $O(1)$
 
-Therefore, our recurrence is:
+Since we make two recursive calls to `sort` on each half aftering splitting, our recurrence is:
 
 $T(n) = 2T(\frac{n}{2}) + O(n)$
 
-In this implementation, however, the parallel calls to sort modify our recurrence to be:
+In this implementation, however, the parallel calls to `sort` reduce our recurrence to be:
 
 $T(n) = T(\frac{n}{2}) + O(n)$
 
