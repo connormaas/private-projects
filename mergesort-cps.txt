@@ -1,3 +1,0 @@
-This is a version of merge sort which is written in continuation-passing style using the language SMLNJ.
-
-For implementation specifics, see: https://github.com/connormaas/mergesort-cps
