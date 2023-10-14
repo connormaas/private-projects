@@ -6,10 +6,10 @@ This file consists of comprehensive descriptions for my non-public projects, acc
 
 - Proxy: https://github.com/connormaas/proxy-2022
 - Malloc: https://github.com/connormaas/malloc
-- Shell (tsh): https://github.com/connormaas/tsh-shel
+- Shell: https://github.com/connormaas/tsh-shel
 - Cache Simulation: https://github.com/connormaas/cache-siml
-- Mergesort CPS (functional): https://github.com/connormaas/mergesort-cps
-- Checkers AI (functional): https://github.com/connormaas/ai-checkers
+- CPS Mergesort: https://github.com/connormaas/mergesort-cps
+- AI Checkers: (functional): https://github.com/connormaas/ai-checkers
 - Lightsout Solver: https://github.com/connormaas/lightsout
 - c0vm: https://github.com/connormaas/c0vm
 - Exp Language: https://github.com/connormaas/exp-language
