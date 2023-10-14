@@ -34,7 +34,7 @@ A web proxy serves as a "middle-man" between a client and server. To the client,
 - Capable of reading and writing both binary and text data.
 - Handles requests concurrently from different clients.
 - Employs proper error checking and will not exit the program when errors arise.
-- Uses a cache (shared with all threads) which stores server responses using client requests as "keys". The proxy uses mutexes to prevent data races and other data sharing issues.
+- Uses a cache (shared with all threads) which stores server responses using client requests as keys. The proxy uses mutexes to prevent data races and other data sharing issues.
 
 ## [Malloc](https://github.com/connormaas/malloc)
 
@@ -59,15 +59,15 @@ A Unix command-line shell that interprets user inputs, capable of executing conc
 
 #### Creating Processes
 - A user may simply enter an executable that they wish to run, and if the file is reachable, the process will immediately begin taking place.
-- If the '&' operator is added to the end of the line, the process will run in the background and the user may continuing employing the shell as normal.
-- If the '&' operator is not added, the process will run in the foreground. This can be terminated or paused using ctrl-c or ctrl-z respectively.
+- If the `&` operator is added to the end of the line, the process will run in the background and the user may continuing employing the shell as normal.
+- If the `&` operator is not added, the process will run in the foreground. This can be terminated or paused using `ctrl-c` or `ctrl-z` respectively.
 
 #### Details
 - Each job being executed has a process ID (PID) and a job ID (JID), which is unique to that process. This is used for identification and further manipulation of processes.
 - Each child process is given its own process group, so when signals are forwarded to that process group, it will not interfere with the parent process. Specifically, this is necessary because otherwise these signals would be sent back to the original shell (parent), as well as every process created by it.
 - When a background process begins, its JID and PID as well as the command line which invoked the execution are displayed.
-- The user typing 'ctrl-c' will terminate the execution of the foreground group.
-- The user typing 'ctrl-z' will stop the execution of the foreground group.
+- The user typing `ctrl-c` will terminate the execution of the foreground group.
+- The user typing `ctrl-z` will stop the execution of the foreground group.
 - Children are properly [reaped](http://www.microhowto.info/howto/reap_zombie_processes_using_a_sigchld_handler.html) using a signal handler. The signal handler is able to deal with multiple terminated children despite receiving just one signal.
 - During a foreground process, background processes that terminate do not become [zombies](http://www.microhowto.info/howto/reap_zombie_processes_using_a_sigchld_handler.html), as signals are handled concurrently with process execution.
 
@@ -78,7 +78,7 @@ A Unix command-line shell that interprets user inputs, capable of executing conc
 - `fg job`: command resumes job by sending it a SIGCONT signal, and then runs it in the foreground. The job argument can be either a PID or JID.
 
 #### IO Redirection
-- The operators '<' (input) and '>' (output) proceed the name of the file to which the input or output will be redirected.
+- The operators `<` (input) and `>` (output) proceed the name of the file to which the input or output will be redirected.
 - The default input and output are stdout and stdin respectively.
 - Users may redirect output to any valid file which they have permission to write to.
 - If a request is made to write to a file that doesn't exist, a new file will be created and written to.
