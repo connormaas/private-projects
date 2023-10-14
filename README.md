@@ -175,7 +175,7 @@ This is a decaying geometric sequence and therefore is upper bounded by $\frac{1
 ## [c0vm](https://github.com/connormaas/c0vm)
 
 #### Overview
-The C0 Virtual Machine (C0VM) is a stack-based virtual machine designed to execute [C0](https://c0.cs.cmu.edu/docs/c0-reference.pdf) bytecode. It draws inspiration from the Java Virtual Machine ([JVM](https://www.geeksforgeeks.org/jvm-works-jvm-architecture).
+The C0 Virtual Machine (C0VM) is a stack-based virtual machine designed to execute [C0](https://c0.cs.cmu.edu/docs/c0-reference.pdf) bytecode. It draws inspiration from the Java Virtual Machine ([JVM](https://www.geeksforgeeks.org/jvm-works-jvm-architecture)).
 
 ## Key Features:
 - Bytecode Execution: C0VM reads and executes compiled C0 code represented in a bytecode format. It processes one instruction at a time and executes it based on the operational semantics defined for each instruction.
