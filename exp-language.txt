@@ -1,9 +1,0 @@
-Exp is a simple programming language in C, which is able to effectively perform mathematical calculations based on standard order of operations using the 
-left-associative principle. The operators are listed from lowest to highest precedence as follows (items with equivalent precedence are put in parentheses 
-together) : ||, &&, (<, >, ==, !=), <<, >>, (+, -), (*, /, %), **.  The description of each of these operators can be seen in the image file contained 
-within this respiratory. I first implemented stack, queue, dictionary, and libraries to assist with parsing an entry for computation. The function “parse” takes 
-in a queue of strings (numbers and operators) as well as dictionary of precedences for each operator. The stack is used to store the current value and 
-operators that have been popped from the queue as applicable. Once the stack is empty, the result is returned (assuming that the ordered combination of 
-operators and values are valid for a complete operation).
-
-For implementation specifics, see: https://github.com/connormaas/exp-language
