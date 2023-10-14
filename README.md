@@ -190,7 +190,7 @@ The C0 Virtual Machine (C0VM) is a stack-based virtual machine designed to execu
 
 #### Structure:
 - Operand Stack: The operand stack is a Last In First Out ([LIFO](https://www.geeksforgeeks.org/lifo-last-in-first-out-approach-in-programming)) data structure where C0 values are pushed and popped during the execution of instructions.
-Bytecode: The bytecode is an array of bytes where each byte represents an instruction or part of an instruction for the current C0 function.
+- Bytecode: The bytecode is an array of bytes where each byte represents an instruction or part of an instruction for the current C0 function.
 - Program Counter: The program counter holds the address of the currently executing instruction, advancing to the next instruction after the current instruction is executed.
 - Local Variables: Local variables are stored in a `c0_value` array with a designated size for each function, facilitating the storage and retrieval of function-local data.
 - Call Stack: The call stack comprises frames, each containing local variables, a local operand stack, and a return address, which facilitates function calls and returns.
