@@ -7,9 +7,9 @@ This file consists of comprehensive descriptions for my non-public projects, acc
 - Proxy: https://github.com/connormaas/proxy-2022
 - Malloc: https://github.com/connormaas/malloc
 - Shell: https://github.com/connormaas/tsh-shel
-- Cache Simulation: https://github.com/connormaas/cache-siml
+- Cache Simulation: https://github.com/connormaas/cache-sim
+- - AI Checkers: https://github.com/connormaas/ai-checkers
 - CPS Mergesort: https://github.com/connormaas/mergesort-cps
-- AI Checkers: https://github.com/connormaas/ai-checkers
 - Lightsout Solver: https://github.com/connormaas/lightsout
 - c0vm: https://github.com/connormaas/c0vm
 - Exp Language: https://github.com/connormaas/exp-language
@@ -134,16 +134,21 @@ d = dirty bit
 #### Details
 
 The program begins by parsing the command line for specific arguments, including `s` (the number of bits required to represent the set index), `b` (the number of bits required to represent the block offset), and `E` (the number of lines per set). It then parses the specified trace file, which contains load and save operations with specific addresses. Additionally, the number of bytes required for each operation is included in said file. The program returns the number of: 
-- Hits: The number of times the cache successfully finds and retrieves the requested data.
-- Misses: The number of times the cache fails to find the requested data, necessitating a fetch from a higher-level memory.
-- Evictions: The process of removing a cache line from the cache to make space for new data, typically when the cache is full.
-- Dirty Bytes: Bytes in the cache that have been modified but not yet written back to the main memory or next level of cache.
-- Dirty Byte Evictions: The process of evicting cache lines that contain dirty bytes, which requires writing them back to the main memory before eviction.
+- `Hits`: The number of times the cache successfully finds and retrieves the requested data.
+- `Misses`: The number of times the cache fails to find the requested data, necessitating a fetch from a higher-level memory.
+- `Evictions`: The process of removing a cache line from the cache to make space for new data, typically when the cache is full.
+- `Dirty Bytes`: Bytes in the cache that have been modified but not yet written back to the main memory or next level of cache.
+- `Dirty Byte Evictions`: The process of evicting cache lines that contain dirty bytes, which requires writing them back to the main memory before eviction.
+
+## [AI Checkers](https://github.com/connormaas/ai-checkers)
+
+#### Overview
+This program hosts a AI checkers player effective at winning games versus real, human opponents. Implemented in the functional programming language SML, it uses [alpha-beta pruning](https://www.chessprogramming.org/Alpha-Beta) to make decisions. In essence, this algorithm selects its next move by exploring all potential future scenarios, but smartly disregards options that are clearly unfavorable or overly speculative. While this algorithm is conceptually simple, its functional implementation becomes much more challenging.
 
 ## [CPS Mergesort](https://github.com/connormaas/mergesort-cps)
 
 #### Overview
-This is a parallel implementation of mergesort written in [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) utilizing the functional programming langauge, SML. The sequential complexity of this solution is the standard O(nlogn) for mergesort. However, the parallel complexity is O(n). We come to this conclusion using the [brick method]():
+This is a parallel implementation of mergesort written in [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) utilizing the functional programming langauge, SML. The sequential complexity of this solution is the same as standard mergesort: O(nlogn). However, the parallel complexity of is O(n).
 
 In normal merge sort, we have:
 Split : O(n)
@@ -154,7 +159,7 @@ Therefore, our recurrence is:
 
 T(n) = 2T(n/2) + O(n)
 
-However, the parallelization of our calls to sort allow our recurrence to become:
+In this implementation, however, the parallel calls to sort modify our recurrence to be:
 
 T(n) = T(n/2) + O(n)
 
@@ -164,23 +169,15 @@ $\sum_i \left(\frac{1}{2}\right)^i C(r)$
 
 This is a decaying geometric sequence and therefore is upper bounded by $\frac{1}{2 - 1} C(r)$ = C(r). Therefore, the parallel complexity of this program is O(n)!
 
-## [AI Checkers](https://github.com/connormaas/ai-checkers)
-
-#### Overview
-This program is a functional AI capable of effectively playing checkers, using the alpha-beta algorithm (alpha-beta pruning). This algorithm considers future moves by the opponent for each possible move that it could make on that turn. Although this algorithm is relatively simple, its functional implementation becomes more challenging.
-
-#### Background
-Inspired by [JVM](https://en.wikipedia.org/wiki/Java_virtual_machine). More information on the alpha-beta algorithm can be found [here](https://www.chessprogramming.org/Alpha-Beta).
-
 ## [LightsOut Solver](https://github.com/connormaas/lightsout-fast)
 
 #### Overview
-Lightsout is an electronic board game, consisting of a 5x5 board where the main goal is to turn off all the lights. However, when a light is turned off, the neighboring lights (left, right, up, down) are turned on. A more formal and in-depth description of the game can be found [here](https://en.wikipedia.org/wiki/Lights_Out_(game)). This program, written in C, produces a solution to any solvable board using the minimum number of moves. The solution is outputted step-by-step, including the coordinates of each required move, as well as a depiction of the board using “#” for lights that are on and “0” for lights that are off. Additionally, a hash table library was implemented, which stores previous board solutions, preventing repetitive computation.
+[Lightsout](https://en.wikipedia.org/wiki/Lights_Out_(game)) is an electronic board game, consisting of a 5x5 board where the main goal is to "turn off all the lights." However, when a light is flipped, the neighboring lights (left, right, up, down) are also flipped. This program, written in C, produces a solution to any solvable board using the minimum number of moves. The program outputs a step-by-step solution to any solvable board . Additionally, I implemented a hash table library to stores previous board solutions, preventing any repetitive computation.
 
 ## [c0vm](https://github.com/connormaas/c0vm)
 
 #### Overview
-c0vm is a virtual machine for C0, a C-like language developed at CMU. It's a stack-based machine that handles arithmetic operations and other instructions. The call stack consists of frames, each containing local variables, a local operand stack, and a return address. Operands are popped from an operand stack and their result is pushed back onto the stack. Functions defined in a source file are kept in a “function pool” and library functions are kept in a “native pool”.
+c0vm is a virtual machine for C0, a C-like language developed by Carnegie Mellon University. In essence, it is a stack-based language that handles arithmetic operations and other instructions. The call stack consists of frames, each containing local variables, a local operand stack, and a return address. Operands are popped from an operand stack and their result is pushed back onto the stack. Functions defined in a source file are kept in a “function pool” and library functions are kept in a “native pool”.
 
 ## [Exp Language](https://github.com/connormaas/exp-language)
 
