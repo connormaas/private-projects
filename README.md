@@ -10,9 +10,9 @@ This file consists of comprehensive descriptions for my non-public projects, acc
 - Cache Simulation: https://github.com/connormaas/cache-siml
 - Mergesort CPS (functional): https://github.com/connormaas/mergesort-cps
 - Checkers AI (functional): https://github.com/connormaas/ai-checkers
+- Lightsout Solver: https://github.com/connormaas/lightsout
 - c0vm: https://github.com/connormaas/c0vm
-- Exp (language): https://github.com/connormaas/exp-language
-- Lights Out Solver: https://github.com/connormaas/lightsout
+- Exp Language: https://github.com/connormaas/exp-language
 
 However, please note that these links will lead to 404 error unless I have granted you access to them. Please reach out to me at connor@maasclinic.com and I would be happy to provide applicable access.
 
@@ -140,7 +140,7 @@ The program begins by parsing the command line for specific arguments, including
 - Dirty Bytes: Bytes in the cache that have been modified but not yet written back to the main memory or next level of cache.
 - Dirty Byte Evictions: The process of evicting cache lines that contain dirty bytes, which requires writing them back to the main memory before eviction.
 
-## [Mergesort (CPS)](https://github.com/connormaas/mergesort-cps)
+## [CPS Mergesort](https://github.com/connormaas/mergesort-cps)
 
 #### Overview
 This is a parallel implementation of mergesort written in [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) utilizing the functional programming langauge, SML. The sequential complexity of this solution is the standard O(nlogn) for mergesort. However, the parallel complexity is O(n). We come to this conclusion using the [brick method]():
@@ -172,7 +172,7 @@ This program is a functional AI capable of effectively playing checkers, using t
 #### Background
 Inspired by [JVM](https://en.wikipedia.org/wiki/Java_virtual_machine). More information on the alpha-beta algorithm can be found [here](https://www.chessprogramming.org/Alpha-Beta).
 
-## [LightsOut Solver (fast)](https://github.com/connormaas/lightsout-fast)
+## [LightsOut Solver](https://github.com/connormaas/lightsout-fast)
 
 #### Overview
 Lightsout is an electronic board game, consisting of a 5x5 board where the main goal is to turn off all the lights. However, when a light is turned off, the neighboring lights (left, right, up, down) are turned on. A more formal and in-depth description of the game can be found [here](https://en.wikipedia.org/wiki/Lights_Out_(game)). This program, written in C, produces a solution to any solvable board using the minimum number of moves. The solution is outputted step-by-step, including the coordinates of each required move, as well as a depiction of the board using “#” for lights that are on and “0” for lights that are off. Additionally, a hash table library was implemented, which stores previous board solutions, preventing repetitive computation.
