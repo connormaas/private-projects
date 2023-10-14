@@ -95,57 +95,31 @@ A Unix command-line shell that interprets user inputs, capable of executing conc
 This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computing)). It integrates a least recently used ([lru](https://www.educative.io/implement-least-recently-used-cache#)) eviction policy. An L1 cache is generally structured as follows:
 
 v = valid bit
-
 d = dirty bit
-
 +----------------------------------------------------------------------------------+
-
 |                                   Cache Set 0                                    |
-
 | +----------------------------+               +----------------------------+      |
-
 | |            Line 0          |               |            Line 1          | ...  |
-
 | | v | d | tag |    offset    |               | v | d | tag |    offset    |      |
-
 | +----------------------------+               +----------------------------+      |
-
 +----------------------------------------------------------------------------------+
-
 +----------------------------------------------------------------------------------+
-
 |                                   Cache Set 1                                    |
-
 | +----------------------------+               +----------------------------+      |
-
 | |            Line 0          |               |            Line 1          | ...  |
-
 | | v | d | tag |    offset    |               | v | d | tag |    offset    |      |
-
 | +----------------------------+               +----------------------------+      |
-
 +----------------------------------------------------------------------------------+
-
-                                        .
-                                        
-                                        .
-                                        
-                                        .
-                                        
+                                        .                          
+                                        .                                 
+                                        .                                   
 +----------------------------------------------------------------------------------+
-
 |                                   Cache Set _                                    |
-
 | +----------------------------+               +----------------------------+      |
-
 | |            Line 0          |               |            Line 1          | ...  |
-
 | | v | d | tag |    offset    |               | v | d | tag |    offset    |      |
-
 | +----------------------------+               +----------------------------+      |
-
 +----------------------------------------------------------------------------------+
-
 
 #### Details
 
@@ -176,10 +150,9 @@ T(n) = T(n/2) + O(n)
 
 We can conclude that this recurrence is *root dominated*. That is, if the root has cost $C(r)$, level $i$ will have total cost at most $(\frac{1}{2})^i C(r)$. This is because the cost of the children of every node on a level decrease by at least a factor of 2 to the next level. The total cost is therefore upper bounded by 
 
-$\sum_{i=0}^(\inf) \left(\frac{1}{2}\right)^i C(r)$
+$\sum_{i=0}(\infinity) \left(\frac{1}{2}\right)^i C(r)$
 
 This is a decaying geometric sequence and therefore is upper bounded by $\frac{1}{2 - 1} C(r)$ = C(r).
-
 
 ## [AI Checkers](https://github.com/connormaas/ai-checkers)
 
