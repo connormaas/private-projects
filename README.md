@@ -91,7 +91,6 @@ A Unix command-line shell that interprets user inputs, capable of executing conc
 ## [Cache Simulation](https://github.com/connormaas/cache-sim)
 
 #### Overview
-
 This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computing)). It integrates a least recently used ([lru](https://www.educative.io/implement-least-recently-used-cache#)) eviction policy. An L1 cache is generally structured as follows:
 
 ```
@@ -132,7 +131,6 @@ d = dirty bit
 ```
 
 #### Details
-
 The program begins by parsing the command line for specific arguments, including `s` (the number of bits required to represent the set index), `b` (the number of bits required to represent the block offset), and `E` (the number of lines per set). It then parses the specified trace file, which contains load and save operations with specific addresses. Additionally, the number of bytes required for each operation is included in said file. The program returns the number of: 
 - `Hits`: The number of times the cache successfully finds and retrieves the requested data.
 - `Misses`: The number of times the cache fails to find the requested data, necessitating a fetch from a higher-level memory.
@@ -177,9 +175,37 @@ This is a decaying geometric sequence and therefore is upper bounded by $\frac{1
 ## [c0vm](https://github.com/connormaas/c0vm)
 
 #### Overview
-c0vm is a virtual machine for C0, a C-like language developed by Carnegie Mellon University. In essence, it is a stack-based language that handles arithmetic operations and other instructions. The call stack consists of frames, each containing local variables, a local operand stack, and a return address. Operands are popped from an operand stack and their result is pushed back onto the stack. Functions defined in a source file are kept in a “function pool” and library functions are kept in a “native pool”.
+The C0 Virtual Machine (C0VM) is a stack-based virtual machine designed to execute [C0](https://c0.cs.cmu.edu/docs/c0-reference.pdf) bytecode. It draws inspiration from the Java Virtual Machine ([JVM](https://www.geeksforgeeks.org/jvm-works-jvm-architecture).
+
+## Key Features:
+- Bytecode Execution: C0VM reads and executes compiled C0 code represented in a bytecode format. It processes one instruction at a time and executes it based on the operational semantics defined for each instruction.
+- Value Representation: Primitive types are represented as 32-bit signed integers, while reference types are represented as void pointers. These are encapsulated under a special type called `c0_value`, which can hold either a primitive or a reference type.
+- Runtime Data Management: The runtime environment manages an operand stack, bytecode, a program counter, local variables, and a call stack to ensure the correct execution flow of the program. 
+- Instruction Set: The instruction set comprises various instructions covering stack manipulation, arithmetic operations, local variables handling, control flow management, function calls and returns, memory allocation, and load/store operations. 
+- Error Handling: C0VM is equipped to detect and handle various runtime errors, issuing error messages for anomalies such as null dereferencing, array index out of bounds, and division by zero. 
+- Heap Management: Manages a C0 runtime heap to satisfy C0 allocation requests, with memory allocation and deallocation handled through C runtime heap functions, ensuring memory safety.
+
+#### Structure:
+- Operand Stack: The operand stack is a Last In, First Out ([LIFO](https://www.geeksforgeeks.org/lifo-last-in-first-out-approach-in-programming)) data structure where C0 values are pushed and popped during the execution of instructions.
+Bytecode: The bytecode is an array of bytes where each byte represents an instruction or part of an instruction for the current C0 function.
+- Program Counter: The program counter holds the address of the currently executing instruction, advancing to the next instruction after the current instruction is executed.
+- Local Variables: Local variables are stored in a `c0_value` array with a designated size for each function, facilitating the storage and retrieval of function-local data.
+- Call Stack: The call stack comprises frames, each containing local variables, a local operand stack, and a return address, which facilitates function calls and returns.
+- Constant Pools: The constant pools house numerical and string constants which can be referenced by the bytecode during execution.
+- Function Pools: Function pools store C0 functions and library functions in separate pools, facilitating function call resolution.
+- Heap: The heap contains C0 strings, arrays, and cells, with memory allocated directly using C runtime heap functions, ensuring efficient memory management.
 
 ## [Exp Language](https://github.com/connormaas/exp-language)
 
 #### Overview
-Exp is a simple programming language in C, capable of effectively performing mathematical calculations based on the standard order of operations using the left-associative principle. The operators are listed from lowest to highest precedence as follows (items with equivalent precedence are grouped together): `||`, `&&`, `(<, >, ==, !=)`, `<<`, `>>`, `(+, -)`, `(*, /, %)`, `**`. The description of each operator can be found in the image file within this repository. The language first implemented stack, queue, dictionary, and libraries to assist with parsing an entry for computation. The function “parse” takes in a queue of strings (numbers and operators) and a dictionary of precedences for each operator. The stack is used to store the current value and operators that have been popped from the queue as applicable. Once the stack is empty, the result is returned (assuming that the ordered combination of operators and values are valid for a complete operation).
+Exp is a simple programming language implemented in C, which evaluates mathematical expressions based on a user-defined order of operations and left-associative principle. Valid operators include:
+
+- `**`: power
+- `*`, `/`, `%`: multiply, divide, modulo
+- `+`, `-`: add, subtract
+- `<<`, `>>`, arithmetic left-shift, arithmetic right-shift
+- `<`, `>`, `==`, `!=`: less than, greater than, equal to, not equal to
+- `||`, `&&`: or, and
+
+#### Implementation
+The function `parse` takes in a queue of strings (numbers and operators) and a dictionary of precedences for each operator. A stack is used to store the current value and operators that have been popped from the queue. Once the stack is empty, the result is returned. The handling of invalid inputs is accounted for in all cases.
