@@ -1,9 +1,0 @@
-Inspired by JVM (background): https://en.wikipedia.org/wiki/Java_virtual_machine
-
-c0vm is a virtual machine for C0 (C-like language developed at CMU). It is a stack-based machine 
-which handles arithmetic operations and other instructions. The call stack consists of frames, 
-each one containing local variables, a local operand stack, and a return address. Operands are 
-popped from an operand stack and their result is pushed back onto the stack. Functions defined in 
-a source file are kept in a “function pool” and library functions are kept in a “native pool”.
-
-For implementation specifics, see: https://github.com/connormaas/c0vm
