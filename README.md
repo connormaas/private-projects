@@ -91,7 +91,7 @@ A Unix command-line shell that interprets user inputs, capable of executing conc
 ## [Cache Simulation](https://github.com/connormaas/cache-sim)
 
 #### Overview
-This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computing)), which integrates a least recently used ([LRU](https://www.educative.io/implement-least-recently-used-cache#)) eviction policy.
+This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computing)), which integrates a least recently used ([LRU](https://www.educative.io/implement-least-recently-used-cache#)) eviction policy and a [write-back](https://www.geeksforgeeks.org/write-through-and-write-back-in-cache) data synchronizaton policy.
 
 #### Illustration
 
@@ -135,8 +135,8 @@ d = dirty bit
 #### Details
 The program begins by parsing the command line for specific arguments, including `s` (the number of bits required to represent the set index), `b` (the number of bits required to represent the block offset), and `E` (the number of lines per set). It then parses a specified trace file, which contains load and save operations as well as corresponding memory addresses. The number of bytes required for each operation is also included in said trace file. Assuming th trace file is well-formatted, the program returns the number of: 
 - `Hits`: The number of times the cache successfully finds and retrieves the requested data.
-- `Misses`: The number of times the cache fails to find the requested data, necessitating a fetch from a higher-level memory.
-- `Evictions`: The process of removing a cache line from the cache to make space for new data, typically when the cache is full.
+- `Misses`: The number of times the cache fails to find the requested data, necessitating a fetch from a main memory.
+- `Evictions`: The process of removing a cache line from the cache to make space for new data, taking place when the cache is full.
 - `Dirty Bytes`: Bytes in the cache that have been modified but not yet written back to the main memory or next level of cache.
 - `Dirty Byte Evictions`: The process of evicting cache lines that contain dirty bytes, which requires writing them back to the main memory before eviction.
 
