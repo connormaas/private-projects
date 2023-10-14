@@ -8,7 +8,7 @@ This file consists of comprehensive descriptions for my non-public projects, acc
 - Malloc: https://github.com/connormaas/malloc
 - Shell: https://github.com/connormaas/tsh-shel
 - Cache Simulation: https://github.com/connormaas/cache-sim
-- - AI Checkers: https://github.com/connormaas/ai-checkers
+- AI Checkers: https://github.com/connormaas/ai-checkers
 - CPS Mergesort: https://github.com/connormaas/mergesort-cps
 - Lightsout Solver: https://github.com/connormaas/lightsout
 - c0vm: https://github.com/connormaas/c0vm
