@@ -94,11 +94,9 @@ A Unix command-line shell that interprets user inputs, capable of executing conc
 
 This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computing)). It integrates a least recently used ([lru](https://www.educative.io/implement-least-recently-used-cache#)) eviction policy. An L1 cache is generally structured as follows:
 
-
-v = valid bit
-
-d = dirty bit
 ```
+v = valid bit
+d = dirty bit
 +----------------------------------------------------------------------------------+
 
 |                                   Cache Set 0                                    |
@@ -163,7 +161,7 @@ We can conclude that this recurrence is *root dominated*. That is, if the root h
 
 $\sum_i^ \left(\frac{1}{2}\right)^i C(r)$
 
-This is a decaying geometric sequence and therefore is upper bounded by $\frac{1}{2 - 1} C(r)$ = C(r).
+This is a decaying geometric sequence and therefore is upper bounded by $\frac{1}{2 - 1} C(r)$ = C(r). Therefore, the parallel complexity of this program is O(n)!
 
 ## [AI Checkers](https://github.com/connormaas/ai-checkers)
 
