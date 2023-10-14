@@ -146,26 +146,26 @@ This program hosts a AI checkers player effective at winning games versus real, 
 ## [CPS Mergesort](https://github.com/connormaas/mergesort-cps)
 
 #### Overview
-This is a parallel implementation of mergesort written in [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) utilizing the functional programming langauge, SML. The sequential complexity of this solution is the same as standard mergesort: O(nlogn). However, the parallel complexity of is O(n).
+This is a parallel implementation of mergesort written in [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) utilizing the functional programming langauge, SML. The sequential complexity of this solution is the same as standard mergesort: O(nlogn). However, the parallel complexity of is $O(n)$.
 
 In normal merge sort, we have:
-Split : O(n)
-Merge: O(n)
+Split : $O(n)$
+Merge: $O(n)$
 Other operations: O(1)
 
 Therefore, our recurrence is:
 
-T(n) = 2T(n/2) + O(n)
+$T(n) = 2T(n/2) + O(n)$
 
 In this implementation, however, the parallel calls to sort modify our recurrence to be:
 
-T(n) = T(n/2) + O(n)
+$T(n) = T(n/2) + O(n)$
 
 We can conclude that this recurrence is *root dominated*. That is, if the root has cost $C(r)$, level $i$ will have total cost at most $(\frac{1}{2})^i C(r)$. This is because the cost of the children of every node on a level decrease by at least a factor of 2 to the next level. The total cost is therefore upper bounded by 
 
 $\sum_i \left(\frac{1}{2}\right)^i C(r)$
 
-This is a decaying geometric sequence and therefore is upper bounded by $\frac{1}{2 - 1} C(r)$ = C(r). Therefore, the parallel complexity of this program is O(n)!
+This is a decaying geometric sequence and therefore is upper bounded by $\frac{1}{2 - 1} C(r)$ = C(r). Therefore, the parallel complexity of this program is $O(n)$.
 
 ## [LightsOut Solver](https://github.com/connormaas/lightsout-fast)
 
