@@ -6,7 +6,7 @@ This file consists of comprehensive descriptions for my non-public projects, acc
 
 - Proxy: https://github.com/connormaas/proxy-2022
 - Malloc: https://github.com/connormaas/malloc
-- Shell: https://github.com/connormaas/tsh-shel
+- Shell: https://github.com/connormaas/tsh-shell
 - Cache Simulation: https://github.com/connormaas/cache-sim
 - AI Checkers: https://github.com/connormaas/ai-checkers
 - CPS Mergesort: https://github.com/connormaas/mergesort-cps
