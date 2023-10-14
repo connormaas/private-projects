@@ -155,11 +155,11 @@ Other operations: O(1)
 
 Therefore, our recurrence is:
 
-$T(n) = 2T(n/2) + O(n)$
+$T(n) = 2T(frac{n}{2}) + O(n)$
 
 In this implementation, however, the parallel calls to sort modify our recurrence to be:
 
-$T(n) = T(n/2) + O(n)$
+$T(n) = T(frac{n}{2}) + O(n)$
 
 We can conclude that this recurrence is *root dominated*. That is, if the root has cost $C(r)$, level $i$ will have total cost at most $(\frac{1}{2})^i C(r)$. This is because the cost of the children of every node on a level decrease by at least a factor of 2 to the next level. The total cost is therefore upper bounded by 
 
