@@ -92,7 +92,7 @@ A Unix command-line shell that interprets user inputs, capable of executing conc
 
 #### Overview
 This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computing)), which integrates two policies: 
-1. [write-back](https://www.geeksforgeeks.org/write-through-and-write-back-in-cache) data synchronizaton
+1. [write-back](https://www.geeksforgeeks.org/write-through-and-write-back-in-cache) data synchronization
 2. least recently used ([LRU](https://www.educative.io/implement-least-recently-used-cache#)) eviction
 
 #### Illustration
