@@ -14,7 +14,7 @@ This file consists of comprehensive descriptions for my non-public projects, acc
 - c0vm: https://github.com/connormaas/c0vm
 - Exp Language: https://github.com/connormaas/exp-language
 
-However, please note that these links will lead to 404 error unless I have granted you access to them. Please reach out to me at connor@maasclinic.com and I would be happy to provide applicable access.
+However, please note that these links will lead to a 404 error unless I have granted you access to them. Please reach out to me at connor@maasclinic.com and I would be happy to provide applicable access.
 
 ## [Proxy](https://github.com/connormaas/proxy-2022)
 
