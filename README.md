@@ -165,7 +165,7 @@ We can conclude that this recurrence is *root dominated*. That is, if the root h
 
 $\sum_i \left(\frac{1}{2}\right)^i C(r)$
 
-This is a decaying geometric sequence and therefore is upper bounded by $\frac{1}{2 - 1} C(r)$ = C(r). Therefore, the parallel complexity of this program is $O(n)$.
+This is a decaying geometric sequence, so our upper bounded becomes $\frac{1}{2 - 1} C(r)$ = C(r). Therefore, the parallel complexity of this program is $O(n)$.
 
 ## [LightsOut Solver](https://github.com/connormaas/lightsout-fast)
 
