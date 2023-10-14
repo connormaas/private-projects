@@ -4,10 +4,10 @@
 
 This file consists of comprehensive descriptions for my non-public projects, accompanied by the links to said projects. For quick access to the private project repositories, I have provided the following links:
 
-- Cache Simulation: https://github.com/connormaas/cache-sim
-- Malloc: https://github.com/connormaas/malloc
 - Proxy: https://github.com/connormaas/proxy-2022
-- Shell (tsh): https://github.com/connormaas/tsh-shell
+- Malloc: https://github.com/connormaas/malloc
+- Shell (tsh): https://github.com/connormaas/tsh-shel
+- Cache Simulation: https://github.com/connormaas/cache-siml
 - Mergesort CPS (functional): https://github.com/connormaas/mergesort-cps
 - Checkers AI (functional): https://github.com/connormaas/ai-checkers
 - c0vm: https://github.com/connormaas/c0vm
