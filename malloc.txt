@@ -1,4 +1,0 @@
-This is an implementation of the C memory allocation functions: malloc, calloc, realloc, and free. These functions are implemented to have the 
-same behavior as the C Standard Library function.
-
-For implementation specifics, see: https://github.com/connormaas/malloc
