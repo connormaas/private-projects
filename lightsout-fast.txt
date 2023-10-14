@@ -1,8 +1,0 @@
-Lightsout is an electronic board game, consisting of a 5x5 board where the main goal is to turn off all the lights. The catch is, however, that when a 
-light is turned off, the neighboring lights (left, right, up, down) are turned on. A more formal and in-depth description of the game can be found at the 
-following link: https://en.wikipedia.org/wiki/Lights_Out_(game). My program, written in C, is able to produce a solution to any solvable board using the 
-minimum number of moves. The solution is outputted step-by-step, including the coordinates of each required move, as well as a depiction of the board using
-“#” for lights that are on and “0” for lights that are off. Additionally, I implemented a hash table library, which is able to store previous board solutions, preventing 
-repetitive computation.
-
-For implementation specifics, see: https://github.com/connormaas/lightsout-fast
