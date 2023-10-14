@@ -9,7 +9,7 @@ This file consists of comprehensive descriptions for my non-public projects, acc
 - Shell: https://github.com/connormaas/tsh-shel
 - Cache Simulation: https://github.com/connormaas/cache-siml
 - CPS Mergesort: https://github.com/connormaas/mergesort-cps
-- AI Checkers: (functional): https://github.com/connormaas/ai-checkers
+- AI Checkers: https://github.com/connormaas/ai-checkers
 - Lightsout Solver: https://github.com/connormaas/lightsout
 - c0vm: https://github.com/connormaas/c0vm
 - Exp Language: https://github.com/connormaas/exp-language
