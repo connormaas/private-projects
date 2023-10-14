@@ -94,7 +94,8 @@ A Unix command-line shell that interprets user inputs, capable of executing conc
 
 This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computing)). It integrates a least recently used ([lru](https://www.educative.io/implement-least-recently-used-cache#)) eviction policy. An L1 cache is generally structured as follows:
 
-v = valid bit
+
+$v = valid bit
 d = dirty bit
 +----------------------------------------------------------------------------------+
 |                                   Cache Set 0                                    |
@@ -119,8 +120,7 @@ d = dirty bit
 | |            Line 0          |               |            Line 1          | ...  |
 | | v | d | tag |    offset    |               | v | d | tag |    offset    |      |
 | +----------------------------+               +----------------------------+      |
-+----------------------------------------------------------------------------------+
-
++----------------------------------------------------------------------------------+$
 #### Details
 
 The program begins by parsing the command line for specific arguments, including `s` (the number of bits required to represent the set index), `b` (the number of bits required to represent the block offset), and `E` (the number of lines per set). It then parses the specified trace file, which contains load and save operations with specific addresses. Additionally, the number of bytes required for each operation is included in said file. The program returns the number of: 
@@ -150,7 +150,7 @@ T(n) = T(n/2) + O(n)
 
 We can conclude that this recurrence is *root dominated*. That is, if the root has cost $C(r)$, level $i$ will have total cost at most $(\frac{1}{2})^i C(r)$. This is because the cost of the children of every node on a level decrease by at least a factor of 2 to the next level. The total cost is therefore upper bounded by 
 
-$\sum_i^\infty \left(\frac{1}{2}\right)^i C(r)$
+$\sum_i^ \left(\frac{1}{2}\right)^i C(r)$
 
 This is a decaying geometric sequence and therefore is upper bounded by $\frac{1}{2 - 1} C(r)$ = C(r).
 
