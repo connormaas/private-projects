@@ -161,7 +161,7 @@ Since we make two recursive calls to `sort` on each half aftering splitting, our
 
 $T(n) = 2T(\frac{n}{2}) + O(n)$
 
-In this implementation, however, the parallel calls to `sort` reduce our recurrence to be:
+In this implementation, however, the parallel calls to `sort` reduce our recurrence to:
 
 $T(n) = T(\frac{n}{2}) + O(n)$
 
