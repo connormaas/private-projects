@@ -16,7 +16,11 @@ This file consists of comprehensive descriptions for my non-public projects, acc
 
 However, please note that these links will lead to a 404 error unless I have granted you access to them. Please reach out to me at cmaas@andrew.cmu.edu and I would be happy to provide applicable access.
 
-## [Proxy](https://github.com/connormaas/proxy-2022)
+## Proxy
+
+#### Private Project Repository
+
+[link](https://github.com/connormaas/proxy-2022)
 
 #### Introduction
 A web proxy serves as a "middle-man" between a client and server. To the client, it acts as a server, interpreting requests and providing responses. While to the server, it acts as a client, generating requests and reading responses.
