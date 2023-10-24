@@ -18,7 +18,7 @@ However, please note that these links will lead to a 404 error unless I have gra
 
 ## Proxy
 
-#### Private Project Repository
+#### Private Repository
 
 [link](https://github.com/connormaas/proxy-2022)
 
