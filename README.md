@@ -40,7 +40,11 @@ A web proxy serves as a "middle-man" between a client and server. To the client,
 - Employs proper error checking and will not exit the program when errors arise.
 - Uses a cache (shared with all threads) which stores server responses using client requests as keys. The proxy uses mutexes to prevent data races and other data sharing issues.
 
-## [Malloc](https://github.com/connormaas/malloc)
+## Malloc
+
+#### Private Repository
+
+The full reporistory can be found [here](https://github.com/connormaas/malloc). To request access, email cmaas@andrew.cmu.edu.
 
 #### Overview
 This is an implementation of the C memory allocation functions: `malloc`, `calloc`, `realloc`, and `free`, designed to have the same behavior and performance as the corresponding C Standard Library functions.
@@ -56,7 +60,11 @@ This is an implementation of the C memory allocation functions: `malloc`, `callo
   4. There is a separately linked list containing free mini-blocks, which significantly reduces wasted bytes in small allocations.
   5. The use of a [best-fit](https://www.geeksforgeeks.org/best-fit-allocation-in-operating-system) policy for allocating free blocks slightly improves the utilization.
 
-## [Shell](https://github.com/connormaas/tsh-shell)
+## Shell
+
+#### Private Repository
+
+The full reporistory can be found [here](https://github.com/connormaas/tsh-shell). To request access, email cmaas@andrew.cmu.edu.
 
 #### Overview
 A Unix command-line shell that interprets user inputs, capable of executing concurrent built-in and user-driven commands. This shell supports error handling, signal handling, and IO redirection.
@@ -92,7 +100,11 @@ A Unix command-line shell that interprets user inputs, capable of executing conc
 #### Error Handling
 - Error handling has been carefully constructed to ensure no input can break the shell.
 
-## [Cache Simulation](https://github.com/connormaas/cache-sim)
+## Cache Simulation
+
+#### Private Repository
+
+The full reporistory can be found [here](https://github.com/connormaas/cache-sim). To request access, email cmaas@andrew.cmu.edu.
 
 #### Overview
 This program simulates a L1 [cache](https://en.wikipedia.org/wiki/Cache_(computing)), which integrates two policies: 
@@ -146,12 +158,20 @@ The program begins by parsing the command line for specific arguments, including
 - `Dirty Bytes`: Bytes in the cache that have been modified but not yet written back to the main memory or next level of cache.
 - `Dirty Byte Evictions`: The process of evicting cache lines that contain dirty bytes, which requires writing them back to the main memory before eviction.
 
-## [AI Checkers](https://github.com/connormaas/ai-checkers)
+## AI Checkers
+
+#### Private Repository
+
+The full reporistory can be found [here](https://github.com/connormaas/ai-checkers). To request access, email cmaas@andrew.cmu.edu.
 
 #### Overview
 This program hosts a AI checkers player effective at winning games versus real, human opponents. Implemented in the functional programming language SML, it uses [alpha-beta pruning](https://www.chessprogramming.org/Alpha-Beta) to make decisions. In essence, this algorithm selects its next move by exploring all potential future scenarios, but smartly disregards options that are clearly unfavorable or overly speculative. While this algorithm is conceptually simple, its functional implementation becomes much more challenging.
 
-## [CPS Mergesort](https://github.com/connormaas/mergesort-cps)
+## CPS Mergesort
+
+#### Private Repository
+
+The full reporistory can be found [here](https://github.com/connormaas/mergesort-cps). To request access, email cmaas@andrew.cmu.edu.
 
 #### Overview
 This is a parallel implementation of mergesort written in [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) utilizing the functional programming langauge, SML. The sequential complexity of this solution is the same as standard mergesort: O(nlogn). However, the parallel complexity is $O(n)$.
@@ -175,11 +195,21 @@ $\sum_i \left(\frac{1}{2}\right)^i C(r)$
 
 This is a decaying geometric sequence, so our upper bounded becomes $\frac{1}{2 - 1} C(r)$ = C(r). Therefore, the parallel complexity of this program is $O(n)$.
 
-## [LightsOut Solver](https://github.com/connormaas/lightsout-fast)
+## LightsOut Solver
+
+#### Private Repository
+
+The full reporistory can be found [here](https://github.com/connormaas/lightsout-fast). To request access, email cmaas@andrew.cmu.edu.
+
+#### Overview
 
 [Lightsout](https://en.wikipedia.org/wiki/Lights_Out_(game)) is an electronic board game, consisting of a 5x5 board where the main goal is to "turn off all the lights." However, when a light is flipped, the neighboring lights (left, right, up, down) are also flipped. This program, written in C, produces a solution to any solvable board using the minimum number of moves. The program outputs a step-by-step solution to any solvable board . Additionally, I implemented a hash table library to stores previous board solutions, preventing any repetitive computation.
 
-## [c0vm](https://github.com/connormaas/c0vm)
+## c0vm
+
+#### Private Repository
+
+The full reporistory can be found [here](https://github.com/connormaas/c0vm). To request access, email cmaas@andrew.cmu.edu.
 
 #### Overview
 The C0 Virtual Machine (C0VM) is a stack-based virtual machine designed to execute [C0](https://c0.cs.cmu.edu/docs/c0-reference.pdf) bytecode. It draws inspiration from the Java Virtual Machine ([JVM](https://www.geeksforgeeks.org/jvm-works-jvm-architecture)).
@@ -202,7 +232,11 @@ The C0 Virtual Machine (C0VM) is a stack-based virtual machine designed to execu
 - Function Pools: Function pools store C0 functions and library functions in separate pools, facilitating function call resolution.
 - Heap: The heap contains C0 strings, arrays, and cells, with memory allocated directly using C runtime heap functions, ensuring efficient memory management.
 
-## [Exp Language](https://github.com/connormaas/exp-language)
+## Exp Language
+
+#### Private Repository
+
+The full reporistory can be found [here](https://github.com/connormaas/exp-language). To request access, email cmaas@andrew.cmu.edu.
 
 #### Overview
 Exp is a simple programming language implemented in C, which evaluates mathematical expressions based on a user-defined order of operations and left-associative principle. Valid operators include:
