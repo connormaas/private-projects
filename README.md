@@ -20,7 +20,7 @@ However, please note that these links will lead to a 404 error unless I have gra
 
 #### Private Repository
 
-[link](https://github.com/connormaas/proxy-2022)
+The full reporistory can be found [here](https://github.com/connormaas/proxy-2022). Please reach out to me at cmaas@andrew.cmu.edu for access.
 
 #### Introduction
 A web proxy serves as a "middle-man" between a client and server. To the client, it acts as a server, interpreting requests and providing responses. While to the server, it acts as a client, generating requests and reading responses.
