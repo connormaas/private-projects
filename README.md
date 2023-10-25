@@ -174,7 +174,7 @@ This program hosts a AI checkers player effective at winning games versus real, 
 The full reporistory can be found [here](https://github.com/connormaas/mergesort-cps). To request access, email cmaas@andrew.cmu.edu.
 
 #### Overview
-This is a parallel implementation of mergesort written in [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) utilizing the functional programming langauge, SML. The sequential complexity of this solution is the same as standard mergesort: O(nlogn). However, the parallel complexity is $O(n)$.
+In this project, we implement parallel mergesort in [continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) utilizing the functional programming langauge, SML. The sequential complexity of this solution is the same as standard mergesort: O(nlogn). However, the parallel complexity is $O(n)$.
 
 In normal mergesort, we have: 
 - `split` : $O(n)$
