@@ -67,7 +67,7 @@ A web proxy serves as a "middle-man" between a client and server. To the client,
 The full reporistory can be found [here](https://github.com/connormaas/tsh-shell). To request access, email cmaas@andrew.cmu.edu.
 
 #### Overview
-A Unix command-line shell that interprets user inputs, capable of executing concurrent built-in and user-driven commands. This shell supports error handling, signal handling, and IO redirection.
+In this project, I implement a Unix command-line shell that interprets user inputs, capable of executing concurrent built-in and user-driven commands. This shell supports error handling, signal handling, and IO redirection.
 
 #### Creating Processes
 - A user may simply enter an executable that they wish to run, and if the file is reachable, the process will immediately begin taking place.
