@@ -47,7 +47,7 @@ A web proxy serves as a "middle-man" between a client and server. To the client,
 The full reporistory can be found [here](https://github.com/connormaas/malloc). To request access, email cmaas@andrew.cmu.edu.
 
 #### Overview
-In this project, I implement the C memory allocation functions: `malloc`, `calloc`, `realloc`, and `free`, designed to have the same behavior and performance as the corresponding C Standard Library functions.
+In this project, I implement the C memory allocation functions: `malloc`, `calloc`, `realloc`, and `free`, designed to have the same behavior and performance as their corresponding C Standard Library functions.
 
 #### Implementation
 - The heap is implemented with blocks that contain headers and payloads. The payloads are zero-length arrays, where the last 8 bytes are used to represent the footer (only in freed blocks). Headers and footers of each block are identical and contain both the size of the payload, as well as information on the allocation status of previous blocks.
