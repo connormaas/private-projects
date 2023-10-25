@@ -4,8 +4,8 @@
 
 This file consists of comprehensive descriptions for my non-public projects, accompanied by the links to said projects. For quick access to the private project repositories, I have provided the following links:
 
-- Proxy: https://github.com/connormaas/proxy-2022
 - Malloc: https://github.com/connormaas/malloc
+- Proxy: https://github.com/connormaas/proxy-2022
 - Shell: https://github.com/connormaas/tsh-shell
 - Cache Simulation: https://github.com/connormaas/cache-sim
 - AI Checkers: https://github.com/connormaas/ai-checkers
@@ -15,6 +15,26 @@ This file consists of comprehensive descriptions for my non-public projects, acc
 - Exp Language: https://github.com/connormaas/exp-language
 
 However, please note that these links will lead to a 404 error unless I have granted you access to them. Please reach out to me at cmaas@andrew.cmu.edu and I would be happy to provide applicable access.
+
+## Malloc
+
+#### Private Repository
+
+The full reporistory can be found [here](https://github.com/connormaas/malloc). To request access, email cmaas@andrew.cmu.edu.
+
+#### Overview
+In this project, I implement the C memory allocation functions: `malloc`, `calloc`, `realloc`, and `free`, designed to have the same behavior and performance as their corresponding C Standard Library functions.
+
+#### Implementation
+- The heap is implemented with blocks that contain headers and payloads. The payloads are zero-length arrays, where the last 8 bytes are used to represent the footer (only in freed blocks). Headers and footers of each block are identical and contain both the size of the payload, as well as information on the allocation status of previous blocks.
+- Mini-blocks: mini-blocks are used for small allocations where bytes would be wasted in the payload. They are only 16 bytes (as opposed to regular free blocks which are a minimum of 32 bytes). The first 8 bytes are for the header and the additional 8 bytes are for the payload. When mini-blocks are free, the payload is used as a "next" pointer, allowing for the creation of a singly linked list between all mini-blocks.
+- Performance is optimized by implementing segregated free lists, which aggregate blocks of similar size for quicker access.
+- Utilization is optimized through several strategies:
+  1. During allocation, the free blocks being allocated are split into smaller blocks.
+  2. During freeing, blocks are coalesced with their neighbors into a larger blocks if either or both of their neighbors are free.
+  3. Allocated blocks do not contain or require footers (the bytes of the footer are used as additional payload bytes).
+  4. There is a separately linked list containing free mini-blocks, which significantly reduces wasted bytes in small allocations.
+  5. The use of a [best-fit](https://www.geeksforgeeks.org/best-fit-allocation-in-operating-system) policy for allocating free blocks slightly improves the utilization.
 
 ## Proxy
 
@@ -39,26 +59,6 @@ A web proxy serves as a "middle-man" between a client and server. To the client,
 - Handles requests concurrently from different clients.
 - Employs proper error checking and will not exit the program when errors arise.
 - Uses a cache (shared with all threads) which stores server responses using client requests as keys. The proxy uses mutexes to prevent data races and other data sharing issues.
-
-## Malloc
-
-#### Private Repository
-
-The full reporistory can be found [here](https://github.com/connormaas/malloc). To request access, email cmaas@andrew.cmu.edu.
-
-#### Overview
-In this project, I implement the C memory allocation functions: `malloc`, `calloc`, `realloc`, and `free`, designed to have the same behavior and performance as their corresponding C Standard Library functions.
-
-#### Implementation
-- The heap is implemented with blocks that contain headers and payloads. The payloads are zero-length arrays, where the last 8 bytes are used to represent the footer (only in freed blocks). Headers and footers of each block are identical and contain both the size of the payload, as well as information on the allocation status of previous blocks.
-- Mini-blocks: mini-blocks are used for small allocations where bytes would be wasted in the payload. They are only 16 bytes (as opposed to regular free blocks which are a minimum of 32 bytes). The first 8 bytes are for the header and the additional 8 bytes are for the payload. When mini-blocks are free, the payload is used as a "next" pointer, allowing for the creation of a singly linked list between all mini-blocks.
-- Performance is optimized by implementing segregated free lists, which aggregate blocks of similar size for quicker access.
-- Utilization is optimized through several strategies:
-  1. During allocation, the free blocks being allocated are split into smaller blocks.
-  2. During freeing, blocks are coalesced with their neighbors into a larger blocks if either or both of their neighbors are free.
-  3. Allocated blocks do not contain or require footers (the bytes of the footer are used as additional payload bytes).
-  4. There is a separately linked list containing free mini-blocks, which significantly reduces wasted bytes in small allocations.
-  5. The use of a [best-fit](https://www.geeksforgeeks.org/best-fit-allocation-in-operating-system) policy for allocating free blocks slightly improves the utilization.
 
 ## Shell
 
