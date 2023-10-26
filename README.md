@@ -193,7 +193,7 @@ This is a decaying geometric sequence, so our upper bounded becomes $\frac{1}{2 
 The full reporistory can be found [here](https://github.com/connormaas/ai-checkers). To request access, email cmaas@andrew.cmu.edu.
 
 #### Overview
-This program hosts an AI Checkers player effective at winning games versus real, human opponents. Implemented in the functional programming language SML, it uses [alpha-beta pruning](https://www.chessprogramming.org/Alpha-Beta) to make decisions. In essence, this algorithm selects its next move by exploring all potential future scenarios, but carefully disregards options that are clearly unfavorable or overly speculative. While this algorithm is conceptually simple, its functional implementation becomes much more challenging.
+This program hosts an AI Checkers player effective at winning games versus real, human opponents. Implemented in the functional programming language SML, it uses [alpha-beta pruning](https://www.chessprogramming.org/Alpha-Beta) to make decisions. In essence, this algorithm selects its next move by exploring all potential future scenarios, but carefully disregards options that are unfavorable or overly speculative. While this algorithm is conceptually simple, its functional implementation becomes much more challenging.
 
 ## LightsOut Solver
 
